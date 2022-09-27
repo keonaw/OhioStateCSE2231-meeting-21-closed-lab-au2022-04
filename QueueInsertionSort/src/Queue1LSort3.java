@@ -85,7 +85,21 @@ public final class Queue1LSort3<T> extends Queue1L<T> {
     public void sort(Comparator<T> order) {
         assert order != null : "Violation of: order is not null";
 
-        // TODO - fill in body
+        Queue<T> tempQ = new Queue1L<T>();
+        tempQ.transferFrom(this);
+        int tempQLen = tempQ.length();
+        for (int i = 0; i < tempQLen; i++) {
+            T smallest = tempQ.dequeue();
+            for (int j = 0; j < tempQLen - i; j++) {
+                T toCompare = tempQ.dequeue();
+                int compared = order.compare(smallest, toCompare);
+                if (compared < 0) {
+                    smallest = toCompare;
+                }
+                tempQ.enqueue(toCompare);
+            }
+            this.enqueue(smallest);
+        }
 
     }
 
