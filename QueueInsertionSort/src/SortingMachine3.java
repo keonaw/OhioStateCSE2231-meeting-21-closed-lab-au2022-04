@@ -173,7 +173,7 @@ public class SortingMachine3<T> extends SortingMachineSecondary<T> {
     public final void changeToExtractionMode() {
         assert this.isInInsertionMode() : "Violation of: this.insertion_mode";
 
-        // TODO #3 - switch machine from insertion to extraction mode
+        this.insertionMode = false;
 
     }
 
