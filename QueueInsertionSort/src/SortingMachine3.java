@@ -98,7 +98,15 @@ public class SortingMachine3<T> extends SortingMachineSecondary<T> {
         assert x != null : "Violation of: x is not null";
         assert order != null : "Violation of: order is not null";
 
-        // TODO #1 - fill in body
+        int len = q.length();
+        for (int i = 0; i < len; i++) {
+            T qElement = q.dequeue();
+            int compareValue = order.compare(qElement, x);
+            if (compareValue < 0) {
+                q.enqueue(x);
+            }
+            q.enqueue(qElement);
+        }
 
     }
 
