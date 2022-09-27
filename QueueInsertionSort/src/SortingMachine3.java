@@ -200,10 +200,9 @@ public class SortingMachine3<T> extends SortingMachineSecondary<T> {
     @Override
     public final boolean isInInsertionMode() {
 
-        // TODO #5 - report whether machine is in insertion mode
+        boolean isInsert = this.insertionMode;
 
-        // This line added just to make the component compilable.
-        return false;
+        return isInsert;
     }
 
     @Override
