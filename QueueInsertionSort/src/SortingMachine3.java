@@ -193,8 +193,8 @@ public class SortingMachine3<T> extends SortingMachineSecondary<T> {
 
         // TODO #4 - remove and return first entry in machine contents
 
-        // This line added just to make the component compilable.
-        return null;
+        T first = this.entries.dequeue();
+        return first;
     }
 
     @Override
@@ -220,8 +220,8 @@ public class SortingMachine3<T> extends SortingMachineSecondary<T> {
 
         // TODO #7 - report size of machine contents
 
-        // This line added just to make the component compilable.
-        return 0;
+        int size = this.entries.length();
+        return size;
     }
 
     @Override
