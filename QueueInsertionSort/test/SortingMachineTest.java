@@ -131,8 +131,17 @@ public abstract class SortingMachineTest {
     @Test
     public final void testAddEmpty() {
         SortingMachine<String> m = this.createFromArgsTest(ORDER, true);
-        SortingMachine<String> mExpected =
-                this.createFromArgsRef(ORDER, true, "green");
+        SortingMachine<String> mExpected = this.createFromArgsRef(ORDER, true,
+                "green");
+        m.add("green");
+        assertEquals(mExpected, m);
+    }
+
+    @Test
+    public final void testAddSingleElementIntoNonempty() {
+        SortingMachine<String> m = this.createFromArgsTest(ORDER, true, "red");
+        SortingMachine<String> mExpected = this.createFromArgsRef(ORDER, true,
+                "green", "red");
         m.add("green");
         assertEquals(mExpected, m);
     }
