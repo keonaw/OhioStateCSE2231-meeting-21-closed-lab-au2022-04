@@ -208,10 +208,9 @@ public class SortingMachine3<T> extends SortingMachineSecondary<T> {
     @Override
     public final Comparator<T> order() {
 
-        // TODO #6 - report order used by machine
+        Comparator<T> thisOrder = this.machineOrder;
 
-        // This line added just to make the component compilable.
-        return null;
+        return thisOrder;
     }
 
     @Override
