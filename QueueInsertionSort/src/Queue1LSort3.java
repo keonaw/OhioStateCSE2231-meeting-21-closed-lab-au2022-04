@@ -62,7 +62,22 @@ public final class Queue1LSort3<T> extends Queue1L<T> {
         assert x != null : "Violation of: x is not null";
         assert order != null : "Violation of: order is not null";
 
-        // TODO - fill in body
+        int queueLength = q.length();
+        if (queueLength == 0) {
+            q.enqueue(x);
+        }
+        for (int i = 0; i < queueLength; i++) {
+            T firstCompare = q.dequeue();
+            if (order.compare(x, firstCompare) > 1) {
+                q.enqueue(firstCompare);
+                q.enqueue(x);
+                q.rotate(queueLength - 1);
+            } else if (order.compare(x, firstCompare) < 1) {
+                q.enqueue(x);
+                q.enqueue(firstCompare);
+                q.rotate(queueLength);
+            }
+        }
 
     }
 
