@@ -191,8 +191,6 @@ public class SortingMachine3<T> extends SortingMachineSecondary<T> {
                 .isInInsertionMode() : "Violation of: not this.insertion_mode";
         assert this.size() > 0 : "Violation of: this.contents /= {}";
 
-        // TODO #4 - remove and return first entry in machine contents
-
         T first = this.entries.dequeue();
         return first;
     }
@@ -215,8 +213,6 @@ public class SortingMachine3<T> extends SortingMachineSecondary<T> {
 
     @Override
     public final int size() {
-
-        // TODO #7 - report size of machine contents
 
         int size = this.entries.length();
         return size;
