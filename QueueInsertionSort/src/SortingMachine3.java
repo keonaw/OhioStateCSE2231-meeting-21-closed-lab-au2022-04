@@ -165,7 +165,7 @@ public class SortingMachine3<T> extends SortingMachineSecondary<T> {
         assert x != null : "Violation of: x is not null";
         assert this.isInInsertionMode() : "Violation of: this.insertion_mode";
 
-        // TODO #2 - insert x into machine contents (keep it sorted)
+        this.entries.enqueue(x);
 
     }
 
